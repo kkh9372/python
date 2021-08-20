@@ -1,21 +1,31 @@
 """
 날짜 : 2021/08/12
 이름 : 김관후
-내용 : 파이썬 선택정렬 연습문제
+내용 : 파이썬 이진검색 연습문제
 """
 
-dataset = [3, 5, 1, 2, 4]
-size = len(dataset)
+dataset = [5, 10, 18, 22, 35, 55, 75, 103, 152]
+value = int(input('검색할 숫자 입력 : '))
 
-for i in range(size - 1):
+start = 0
+end = len(dataset) - 1
+loc = 0
+state = False
 
-    for j in range(i+1, size):
+while start <= end:
+    mid = (start + end) // 2
 
-        if dataset[i] > dataset[j]:
-            tmp = dataset[i]
+    if dataset[mid] < value:
+        start = mid + 1
+    elif dataset[mid] > value:
+        end = mid - 1
 
-            dataset[j] = tmp
+    else:
+        loc = mid
+        state = True
+        break
 
-    print('%d Round : %s' % (i, dataset))
-
-print('Result :', dataset)
+if state:
+    print('찾는 위치 : %d번째' % (loc + 1))
+else:
+    print('찾는 숫자가 없습니다.')

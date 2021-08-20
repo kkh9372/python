@@ -1,20 +1,21 @@
 """
 날짜 : 2021/08/12
 이름 : 김관후
-내용 : 파이썬 최대값 최소값 연습문제
+내용 : 파이썬 선택정렬 연습문제
 """
 
-scores = [62, 82, 76, 88, 54, 92]
+dataset = [3, 5, 1, 2, 4]
+size = len(dataset)
 
-max = scores[0]
-min = scores[0]
+for i in range(size - 1):
 
-for score in scores:
+    for j in range(i+1, size):
 
-    if max < score:
-        max = score
-    if min > score:
-        min = score
-        
-print('최대값 :', max)
-print('최소값 :', min)
+        if dataset[i] > dataset[j]:
+            tmp = dataset[i]
+            dataset[i] = dataset[j]
+            dataset[j] = tmp
+
+    print('%d Round : %s' % (i, dataset))
+
+print('Result :', dataset)

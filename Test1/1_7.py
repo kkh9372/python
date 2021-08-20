@@ -1,21 +1,18 @@
 """
 날짜 : 2021/08/12
 이름 : 김관후
-내용 : 파이썬 연습문제 2. 다이아몬드 출력
+내용 : 파이썬 연습문제 3. 피보나치 수열
 """
 
-count = 0
+n1 =1
+n2 =2
 
-for i in range(1, 10):
+print(n1, end=',')
+print(n2, end=',')
 
-    if i <= 5:
-        count += 1
-    else:
-        count -= 1
-    for j in range(5-count):
-        print(' ', end='')
+for i in  range(1, 10):
+    n3 = n1 +n2
+    print(n3, end=',')
 
-    for k in range(count*2 - 1):
-        print('*', end='')
-
-    print()
+    n1 = n2
+    n2 = n3

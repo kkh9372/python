@@ -1,17 +1,20 @@
 """
 날짜 : 2021/08/12
 이름 : 김관후
-내용 : 파이썬 연습문제 3. 피보나치 수열
+내용 : 파이썬 최대값 최소값 연습문제
 """
 
-n1 =1
-n2 =2
+scores = [62, 82, 76, 88, 54, 92]
 
-print(n1, end=',')
-print(n2, end=',')
+max = scores[0]
+min = scores[0]
 
-for i in  range(1, 10):
-    n3 = n1 +n2
-    print(n3, end=',')
+for score in scores:
 
-    n1 = n2
+    if max < score:
+        max = score
+    if min > score:
+        min = score
+        
+print('최대값 :', max)
+print('최소값 :', min)
